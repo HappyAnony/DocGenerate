@@ -23,3 +23,10 @@
 .. figure:: ../images/1-github/25.png
 
 - 使用\ ``git push -u origin master``\ 命令将本地仓库push同步到刚才配置的remote远程仓库中
+
+.. figure:: ../images/1-github/26.png
+
+- 此时可能会报错误\ ``fatal: Could not read from remote repository.``\ ，出现错误的主要原因是github中的\ ``README.md``\ 文件不在本地代码目录中，可使用\ ``git pull --rebase origin master``\ 命令解决
+
+
+
