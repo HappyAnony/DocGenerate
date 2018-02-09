@@ -1,0 +1,381 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>项目创建 &mdash; 文档编排 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="索引"
+              href="../genindex.html"/>
+        <link rel="search" title="搜索" href="../search.html"/>
+    <link rel="top" title="文档编排 1.0.0 documentation" href="../index.html"/>
+        <link rel="up" title="文档生成" href="1-generate.html"/>
+        <link rel="next" title="文档编辑" href="7-edit.html"/>
+        <link rel="prev" title="环境安装" href="5-install.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> 文档编排
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">sphinx文档编排</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="1-generate.html">文档生成</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="4-introduction.html">前言</a></li>
+<li class="toctree-l3"><a class="reference internal" href="5-install.html">环境安装</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">项目创建</a></li>
+<li class="toctree-l3"><a class="reference internal" href="7-edit.html">文档编辑</a></li>
+<li class="toctree-l3"><a class="reference internal" href="8-build.html">生成文档</a></li>
+<li class="toctree-l3"><a class="reference internal" href="9-markup.html">reStructuredText扩展</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="2-collocation.html">文档托管</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3-release.html">文档发布</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">文档编排</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">sphinx文档编排</a> &raquo;</li>
+        
+          <li><a href="1-generate.html">文档生成</a> &raquo;</li>
+        
+      <li>项目创建</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/sphinx/6-project.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>项目创建<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id2">
+<h2>参考文档<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference external" href="http://jwch.sdut.edu.cn/book/tool/UseSphinx.html#id5">建立sphinx工程</a></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="id3">
+<h2>生成目录<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>安装好Sphinx环境后，它自带了一个工具 <code class="docutils literal"><span class="pre">sphinx-quickstart</span></code> , 该工具可以自动生成项目目录文件</p>
+<p>在项目目录下执行 <code class="docutils literal"><span class="pre">sphinx-quickstart</span></code> 命令</p>
+<div class="figure">
+<img alt="../_images/11.png" src="../_images/11.png" />
+</div>
+<dl class="docutils">
+<dt>接下来会进入一个设置向导，根据向导一步一步设置文档项目</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>文档根目录(Root path for the documentation)，默认为当前目录(.)</dt>
+<dd><div class="first last figure">
+<img alt="../_images/2.png" src="../_images/2.png" />
+</div>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>是否分离文档源代码与生成后的文档(Separate source and build directories): y</dt>
+<dd><div class="first last figure">
+<img alt="../_images/3.png" src="../_images/3.png" />
+</div>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>模板与静态文件存放目录前缀(Name prefix for templates and static dir):_</dt>
+<dd><div class="first last figure">
+<img alt="../_images/4.png" src="../_images/4.png" />
+</div>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>项目名称(Project name) <span class="classifier-delimiter">:</span> <span class="classifier">轻量级标记语言；作者名称(Author name)：HappyAnony</span></dt>
+<dd><div class="first last figure">
+<img alt="../_images/5.png" src="../_images/5.png" />
+</div>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>项目版本(Project version) <span class="classifier-delimiter">:</span> <span class="classifier">1.0.1</span></dt>
+<dd><div class="first last figure">
+<img alt="../_images/6.png" src="../_images/6.png" />
+</div>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>项目文档语言(Project language)：zh_CN【 <a class="reference external" href="http://www.sphinx-doc.org/en/stable/config.html#confval-language">Sphinx支持语言查看</a> 】</dt>
+<dd><div class="first last figure">
+<img alt="../_images/7.png" src="../_images/7.png" />
+</div>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>文档默认扩展名(Source file suffix) <span class="classifier-delimiter">:</span> <span class="classifier">.rst</span></dt>
+<dd><div class="first last figure">
+<img alt="../_images/8.png" src="../_images/8.png" />
+</div>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>默认首页文件名(Name of your master document):index</dt>
+<dd><div class="first last figure">
+<img alt="../_images/9.png" src="../_images/9.png" />
+</div>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>是否添加epub目录(Do you want to use the epub builder):y</dt>
+<dd><div class="first last figure">
+<img alt="../_images/10.png" src="../_images/10.png" />
+</div>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>启用autodoc|doctest|intersphinx|todo|coverage|pngmath|ifconfig|viewcode：y</dt>
+<dd><div class="first last figure">
+<img alt="../_images/111.png" src="../_images/111.png" />
+</div>
+</dd>
+</dl>
+</li>
+<li><p class="first">生成Makefile (Create Makefile)：y</p>
+</li>
+<li><dl class="first docutils">
+<dt>生成windows用命令行(Create Windows command file):y</dt>
+<dd><div class="first last figure">
+<img alt="../_images/12.png" src="../_images/12.png" />
+</div>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="id5">
+<h2>目录结构<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal"><span class="pre">sphinx-quickstart</span></code> 命令执行完后，项目目录的目录结构如下所示：</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>readthedocs
+│ make.bat=======make批处理命令
+│ Makefile=======make命令执行所依赖的makefile文件
+├─build==========运行make命令后，生成的文件都在这个目录里面
+└─source=========放置文档的源文件
+　　│ conf.py====存放生成文档的配置信息
+　　│ index.rst
+　　├─_static
+　　└─_templates
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="7-edit.html" class="btn btn-neutral float-right" title="文档编辑" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="5-install.html" class="btn btn-neutral" title="环境安装" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, HappyAnony.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.0.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/translations.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

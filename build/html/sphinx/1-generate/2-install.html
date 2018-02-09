@@ -1,0 +1,357 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>环境安装 &mdash; 文档编排 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="索引"
+              href="../../genindex.html"/>
+        <link rel="search" title="搜索" href="../../search.html"/>
+    <link rel="top" title="文档编排 1.0.0 documentation" href="../../index.html"/>
+        <link rel="up" title="文档生成" href="index.html"/>
+        <link rel="next" title="项目创建" href="3-project.html"/>
+        <link rel="prev" title="前言" href="1-introduction.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> 文档编排
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">sphinx文档编排</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">文档生成</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="1-introduction.html">前言</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">环境安装</a></li>
+<li class="toctree-l3"><a class="reference internal" href="3-project.html">项目创建</a></li>
+<li class="toctree-l3"><a class="reference internal" href="4-edit.html">文档编辑</a></li>
+<li class="toctree-l3"><a class="reference internal" href="5-build.html">生成文档</a></li>
+<li class="toctree-l3"><a class="reference internal" href="6-markup.html">reStructuredText扩展</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../2-collocation/index.html">文档托管</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../3-release/index.html">文档发布</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../gitbook/index.html">Gitbook文档编排</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">文档编排</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">sphinx文档编排</a> &raquo;</li>
+        
+          <li><a href="index.html">文档生成</a> &raquo;</li>
+        
+      <li>环境安装</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/sphinx/1-generate/2-install.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>环境安装<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<dl class="docutils">
+<dt>参考文档</dt>
+<dd><ul class="first last simple">
+<li><a class="reference external" href="http://www.sphinx-doc.org/en/stable/install.html">Installing Sphinx</a></li>
+</ul>
+</dd>
+<dt>Sphinx是由Python编写的，安装Sphinx之前需要安装下列依赖环境：</dt>
+<dd><ul class="first last simple">
+<li><a class="reference external" href="https://www.python.org/downloads/">Python</a> 环境(Python版本至少在2.7之上)</li>
+<li><a class="reference external" href="http://docutils.sf.net/">docutils</a> 库</li>
+<li><a class="reference external" href="http://jinja.pocoo.org/">Jinja2</a> 库</li>
+<li><a class="reference external" href="http://pygments.org/">Pygments</a> 库(支持源码高亮显示)</li>
+</ul>
+</dd>
+</dl>
+<div class="section" id="linux">
+<h2>Linux安装<a class="headerlink" href="#linux" title="Permalink to this headline">¶</a></h2>
+<p>基本上所有的Linux操作系统都会自带Python环境，如果要安装其它版本的Python环境，可以参考 <a class="reference external" href="https://docs.python.org/3/using/unix.html">Python3官方安装文档</a></p>
+<p>基本上所有的Linux发行版在它们的包仓库都有Sphinx安装包，通常包名叫做 <code class="docutils literal"><span class="pre">python-sphinx</span></code> , <code class="docutils literal"><span class="pre">python-Sphinx</span></code> 或者 <code class="docutils literal"><span class="pre">sphinx</span></code> 。</p>
+<p>需要注意的是，这里也有两个带有Sphinx关键字的其它安装包：<code class="docutils literal"><span class="pre">CMU</span> <span class="pre">Sphinx</span></code> (语音识别工具)、<code class="docutils literal"><span class="pre">Sphinx</span> <span class="pre">search</span></code> (文本搜索数据库)</p>
+<ul class="simple">
+<li>Debian/Ubuntu安装Sphinx</li>
+</ul>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ apt-get install python-sphinx
+</pre></div>
+</div>
+<ul class="simple">
+<li>RedHat/Centos安装Sphinx</li>
+</ul>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ yum install python-sphinx
+</pre></div>
+</div>
+<p>当在命令行输入命令 <code class="docutils literal"><span class="pre">sphinx-build</span> <span class="pre">--version</span></code> , 如果能够回显Sphinx的版本信息，说明Sphinx环境安装成功</p>
+<div class="figure">
+<img alt="../../_images/1.png" src="../../_images/1.png" />
+</div>
+</div>
+<div class="section" id="mac">
+<h2>Mac安装<a class="headerlink" href="#mac" title="Permalink to this headline">¶</a></h2>
+<p>Mac操作系统都会自带Python环境，如果要安装其它版本的Python环境，可以参考 <a class="reference external" href="https://docs.python.org/3/using/mac.html">Python3官方安装文档</a></p>
+<ul class="simple">
+<li><a class="reference external" href="https://brew.sh/">brew</a> 安装</li>
+</ul>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ brew cask install sphinx
+</pre></div>
+</div>
+<ul class="simple">
+<li><a class="reference external" href="http://www.macports.org/">MacPorts</a> 安装</li>
+</ul>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ sudo port install py27-sphinx
+$ sudo port select --set python python27
+$ sudo port select --set sphinx py27-sphinx
+</pre></div>
+</div>
+<ul class="simple">
+<li><a class="reference external" href="https://pypi.python.org/pypi/pip">pip</a> 安装(pip是python2自带;pip3是python3自带)</li>
+</ul>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ pip install sphinx
+$ pip3 install sphinx
+</pre></div>
+</div>
+<ul class="simple">
+<li><a class="reference external" href="https://www.anaconda.com/download/">anaconda</a> 安装(anaconda是一个python开源工具自带了Sphinx环境，所以只需要安装anaconda即可)</li>
+</ul>
+<p>当在命令行输入命令 <code class="docutils literal"><span class="pre">sphinx-build</span> <span class="pre">--version</span></code> , 如果能够回显Sphinx的版本信息，说明Sphinx环境安装成功</p>
+<div class="figure">
+<img alt="../../_images/1.png" src="../../_images/1.png" />
+</div>
+</div>
+<div class="section" id="windows">
+<h2>Windows安装<a class="headerlink" href="#windows" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt>Windows操作系统没有自带Python环境，可以参考</dt>
+<dd><ul class="first last simple">
+<li><a class="reference external" href="https://docs.python.org/2/using/windows.html">Python2官方安装文档</a></li>
+<li><a class="reference external" href="https://docs.python.org/3/using/windows.html">Python3官方安装文档</a></li>
+</ul>
+</dd>
+<dt>注意：Windows安装Python最好将其安装目录添加到window环境变量PATH中，利于命令行随处执行</dt>
+<dd><ul class="first last simple">
+<li><a class="reference external" href="https://jingyan.baidu.com/article/cbcede0773e6bb02f50b4d66.html">添加Python环境变量</a></li>
+</ul>
+</dd>
+</dl>
+<p>python2安装后会自带pip工具；python3安装后会自带pip3工具</p>
+<p>接下来使用pip工具安装Sphinx环境</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ pip install sphinx
+$ pip3 install sphinx
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>也可以使用 <code class="docutils literal"><span class="pre">anaconda</span></code> 安装Sphinx环境， <code class="docutils literal"><span class="pre">anaconda</span></code> 是一个python开源工具自带了Sphinx环境，所以只需要安装anaconda即可</dt>
+<dd><ul class="first last simple">
+<li><a class="reference external" href="https://www.anaconda.com/download/">下载安装</a></li>
+</ul>
+</dd>
+</dl>
+<p>当在命令行输入命令 <code class="docutils literal"><span class="pre">sphinx-build</span> <span class="pre">--version</span></code> , 如果能够回显Sphinx的版本信息，说明Sphinx环境安装成功</p>
+<div class="figure">
+<img alt="../../_images/1.png" src="../../_images/1.png" />
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="3-project.html" class="btn btn-neutral float-right" title="项目创建" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="1-introduction.html" class="btn btn-neutral" title="前言" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, HappyAnony.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1.0.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/translations.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

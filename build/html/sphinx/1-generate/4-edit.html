@@ -1,0 +1,928 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>文档编辑 &mdash; 文档编排 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="索引"
+              href="../../genindex.html"/>
+        <link rel="search" title="搜索" href="../../search.html"/>
+    <link rel="top" title="文档编排 1.0.0 documentation" href="../../index.html"/>
+        <link rel="up" title="文档生成" href="index.html"/>
+        <link rel="next" title="生成文档" href="5-build.html"/>
+        <link rel="prev" title="项目创建" href="3-project.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> 文档编排
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">sphinx文档编排</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">文档生成</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="1-introduction.html">前言</a></li>
+<li class="toctree-l3"><a class="reference internal" href="2-install.html">环境安装</a></li>
+<li class="toctree-l3"><a class="reference internal" href="3-project.html">项目创建</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">文档编辑</a></li>
+<li class="toctree-l3"><a class="reference internal" href="5-build.html">生成文档</a></li>
+<li class="toctree-l3"><a class="reference internal" href="6-markup.html">reStructuredText扩展</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../2-collocation/index.html">文档托管</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../3-release/index.html">文档发布</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../gitbook/index.html">Gitbook文档编排</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">文档编排</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">sphinx文档编排</a> &raquo;</li>
+        
+          <li><a href="index.html">文档生成</a> &raquo;</li>
+        
+      <li>文档编辑</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/sphinx/1-generate/4-edit.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>文档编辑<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>文档编辑的核心在于 <code class="docutils literal"><span class="pre">文本编辑器</span></code> 和 <code class="docutils literal"><span class="pre">reStructuredText语法</span></code></p>
+<div class="section" id="text">
+<h2>text编辑器<a class="headerlink" href="#text" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt>支持 <code class="docutils literal"><span class="pre">reStructuredText语法</span></code> 的文本编辑器有</dt>
+<dd><ul class="first last simple">
+<li><a class="reference external" href="https://www.sublimetext.com/">Sublime</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="rst">
+<h2>rst基本语法<a class="headerlink" href="#rst" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id2">
+<h3>参考文档<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference external" href="http://www.sphinx-doc.org/en/stable/contents.html">官方文档</a></li>
+<li><a class="reference external" href="http://www.worldhello.net/gotgithub/appendix/markups.html">轻量级标记语言</a></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="id5">
+<h3>标题<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>一级标题：<code class="docutils literal"><span class="pre">========</span></code></li>
+<li>二级标题：<code class="docutils literal"><span class="pre">--------</span></code></li>
+<li>三级标题：<code class="docutils literal"><span class="pre">~~~~~~~~</span></code></li>
+<li>四级标题：<code class="docutils literal"><span class="pre">^^^^^^^^</span></code></li>
+<li>五级标题：<code class="docutils literal"><span class="pre">++++++++</span></code></li>
+<li>六级标题：<code class="docutils literal"><span class="pre">````````</span></code></li>
+</ul>
+</div>
+<div class="section" id="id6">
+<h3>段落<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>空行分段</li>
+</ul>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">代码示例</th>
+<th class="head">输出示例</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><div class="first last figure">
+<img alt="../../_images/13.png" src="../../_images/13.png" />
+</div>
+</td>
+<td><div class="first last figure">
+<img alt="../../_images/21.png" src="../../_images/21.png" />
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>回车自动续行</li>
+</ul>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">代码示例</th>
+<th class="head">输出示例</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><div class="first last figure">
+<img alt="../../_images/31.png" src="../../_images/31.png" />
+</div>
+</td>
+<td><div class="first last figure">
+<img alt="../../_images/41.png" src="../../_images/41.png" />
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>不留白续行</li>
+</ul>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">代码示例</th>
+<th class="head">输出示例</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><div class="first last figure">
+<img alt="../../_images/51.png" src="../../_images/51.png" />
+</div>
+</td>
+<td><div class="first last figure">
+<img alt="../../_images/61.png" src="../../_images/61.png" />
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>插入换行</li>
+</ul>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">代码示例</th>
+<th class="head">输出示例</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><div class="first last figure">
+<img alt="../../_images/71.png" src="../../_images/71.png" />
+</div>
+</td>
+<td><div class="first last figure">
+<img alt="../../_images/81.png" src="../../_images/81.png" />
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><div class="first last figure">
+<img alt="../../_images/91.png" src="../../_images/91.png" />
+</div>
+</td>
+<td><div class="first last figure">
+<img alt="../../_images/101.png" src="../../_images/101.png" />
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>段落缩进</li>
+</ul>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">代码示例</th>
+<th class="head">输出示例</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><div class="first last figure">
+<img alt="../../_images/112.png" src="../../_images/112.png" />
+</div>
+</td>
+<td><div class="first last figure">
+<img alt="../../_images/121.png" src="../../_images/121.png" />
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><div class="first last figure">
+<img alt="../../_images/131.png" src="../../_images/131.png" />
+</div>
+</td>
+<td><div class="first last figure">
+<img alt="../../_images/14.png" src="../../_images/14.png" />
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id7">
+<h3>代码块<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">代码示例</th>
+<th class="head">输出示例</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><div class="first last figure">
+<img alt="../../_images/15.png" src="../../_images/15.png" />
+</div>
+</td>
+<td><div class="first last figure">
+<img alt="../../_images/16.png" src="../../_images/16.png" />
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id8">
+<h3>列表<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>无序列表</li>
+</ul>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">代码示例</th>
+<th class="head">输出示例</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><div class="first last figure">
+<img alt="../../_images/17.png" src="../../_images/17.png" />
+</div>
+</td>
+<td><div class="first last figure">
+<img alt="../../_images/18.png" src="../../_images/18.png" />
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>有序列表</li>
+</ul>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">代码示例</th>
+<th class="head">输出示例</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><div class="first last figure">
+<img alt="../../_images/19.png" src="../../_images/19.png" />
+</div>
+</td>
+<td><div class="first last figure">
+<img alt="../../_images/20.png" src="../../_images/20.png" />
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>列表续行、段落和代码块</li>
+</ul>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">代码示例</th>
+<th class="head">输出示例</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><div class="first last figure">
+<img alt="../../_images/211.png" src="../../_images/211.png" />
+</div>
+</td>
+<td><div class="first last figure">
+<img alt="../../_images/22.png" src="../../_images/22.png" />
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id9">
+<h3>定义<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">代码示例</th>
+<th class="head">输出示例</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><div class="first last figure">
+<img alt="../../_images/23.png" src="../../_images/23.png" />
+</div>
+</td>
+<td><div class="first last figure">
+<img alt="../../_images/24.png" src="../../_images/24.png" />
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id10">
+<h3>字体<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>粗体和斜体</li>
+</ul>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">代码示例</th>
+<th class="head">输出示例</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><div class="first last figure">
+<img alt="../../_images/25.png" src="../../_images/25.png" />
+</div>
+</td>
+<td><div class="first last figure">
+<img alt="../../_images/26.png" src="../../_images/26.png" />
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>删除线</li>
+</ul>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">代码示例</th>
+<th class="head">输出示例</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><div class="first last figure">
+<img alt="../../_images/27.png" src="../../_images/27.png" />
+</div>
+</td>
+<td><div class="first last figure">
+<img alt="../../_images/28.png" src="../../_images/28.png" />
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>下划线</li>
+</ul>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">代码示例</th>
+<th class="head">输出示例</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><div class="first last figure">
+<img alt="../../_images/29.png" src="../../_images/29.png" />
+</div>
+</td>
+<td><div class="first last figure">
+<img alt="../../_images/30.png" src="../../_images/30.png" />
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>上标、下标</li>
+</ul>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">代码示例</th>
+<th class="head">输出示例</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><div class="first last figure">
+<img alt="../../_images/311.png" src="../../_images/311.png" />
+</div>
+</td>
+<td><div class="first last figure">
+<img alt="../../_images/32.png" src="../../_images/32.png" />
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>等宽字体</li>
+</ul>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">代码示例</th>
+<th class="head">输出示例</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><div class="first last figure">
+<img alt="../../_images/33.png" src="../../_images/33.png" />
+</div>
+</td>
+<td><div class="first last figure">
+<img alt="../../_images/34.png" src="../../_images/34.png" />
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>引言</li>
+</ul>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">代码示例</th>
+<th class="head">输出示例</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><div class="first last figure">
+<img alt="../../_images/35.png" src="../../_images/35.png" />
+</div>
+</td>
+<td><div class="first last figure">
+<img alt="../../_images/36.png" src="../../_images/36.png" />
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>清除标记空白</li>
+</ul>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">代码示例</th>
+<th class="head">输出示例</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><div class="first last figure">
+<img alt="../../_images/37.png" src="../../_images/37.png" />
+</div>
+</td>
+<td><div class="first last figure">
+<img alt="../../_images/38.png" src="../../_images/38.png" />
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id11">
+<h3>链接<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>URL自动链接</li>
+</ul>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">代码示例</th>
+<th class="head">输出示例</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><div class="first last figure">
+<img alt="../../_images/39.png" src="../../_images/39.png" />
+</div>
+</td>
+<td><div class="first last figure">
+<img alt="../../_images/40.png" src="../../_images/40.png" />
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>文字链接</li>
+</ul>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">代码示例</th>
+<th class="head">输出示例</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><div class="first last figure">
+<img alt="../../_images/411.png" src="../../_images/411.png" />
+</div>
+</td>
+<td><div class="first last figure">
+<img alt="../../_images/42.png" src="../../_images/42.png" />
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>内部跳转</li>
+</ul>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">代码示例</th>
+<th class="head">输出示例</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><div class="first last figure">
+<img alt="../../_images/43.png" src="../../_images/43.png" />
+</div>
+</td>
+<td><div class="first last figure">
+<img alt="../../_images/44.png" src="../../_images/44.png" />
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>脚注</li>
+</ul>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">代码示例</th>
+<th class="head">输出示例</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><div class="first last figure">
+<img alt="../../_images/45.png" src="../../_images/45.png" />
+</div>
+</td>
+<td><div class="first last figure">
+<img alt="../../_images/46.png" src="../../_images/46.png" />
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id12">
+<h3>图片<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">代码示例</th>
+<th class="head">输出示例</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><div class="first last figure">
+<img alt="../../_images/47.png" src="../../_images/47.png" />
+</div>
+</td>
+<td><div class="first last figure">
+<img alt="../../_images/48.png" src="../../_images/48.png" />
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id13">
+<h3>表格<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">代码示例</th>
+<th class="head">输出示例</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><div class="first last figure">
+<img alt="../../_images/49.png" src="../../_images/49.png" />
+</div>
+</td>
+<td><div class="first last figure">
+<img alt="../../_images/50.png" src="../../_images/50.png" />
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id14">
+<h3>其它<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>转义</li>
+</ul>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">代码示例</th>
+<th class="head">输出示例</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><div class="first last figure">
+<img alt="../../_images/511.png" src="../../_images/511.png" />
+</div>
+</td>
+<td><div class="first last figure">
+<img alt="../../_images/52.png" src="../../_images/52.png" />
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="id15">
+<h2>注意<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>各种标记字符与其它文本内容之间最好留一个空格，否则会报语法警告</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="5-build.html" class="btn btn-neutral float-right" title="生成文档" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="3-project.html" class="btn btn-neutral" title="项目创建" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, HappyAnony.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1.0.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/translations.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
