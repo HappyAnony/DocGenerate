@@ -48,7 +48,9 @@ window下命令行工具也有很多，比较推荐的是
 
 - 确认所有文件都添加到版本控制中后，使用 ``git commit -am "<message>"`` 命令将当前所有版本控制的文件[即上图红框标注的待commit的文件]commit提交到本地git仓库中
 
+.. figure:: ../images/1-github/5.png
 
+- 再使用 ``git status`` 命令查看当前版本控制状态
 
 
 
