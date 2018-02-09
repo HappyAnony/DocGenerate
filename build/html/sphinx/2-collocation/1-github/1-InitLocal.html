@@ -190,7 +190,6 @@
 </div>
 <div class="section" id="git">
 <h2>git下载安装<a class="headerlink" href="#git" title="Permalink to this headline">¶</a></h2>
-<p>git下载方法</p>
 <ul class="simple">
 <li><dl class="first docutils">
 <dt>window下载安装</dt>
@@ -221,11 +220,43 @@
 </div>
 <div class="section" id="id7">
 <h2>初始化仓库<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<p>window下命令行工具也有很多，比较推荐的是</p>
 <ul class="simple">
-<li>切换到文档主目录[Makefile文件所在目录]，点击鼠标右键，选择Git Bash Here，使用git自带bash环境初始化仓库</li>
+<li>Git Bash[安装git后自带的bash环境，支持shell命令]</li>
+<li><a class="reference external" href="http://cmder.net/">Cmder</a> [window上的命令行神器]</li>
 </ul>
+<p>在这里我们使用 <code class="docutils literal"><span class="pre">git</span> <span class="pre">bash</span></code></p>
+<p>切换到文档主目录[Makefile文件所在目录]，点击鼠标右键，选择Git Bash Here，使用git自带bash环境，输入 <code class="docutils literal"><span class="pre">git</span> <span class="pre">init</span></code> 命令初始化仓库</p>
 <div class="figure">
 <img alt="../../../_images/110.png" src="../../../_images/110.png" />
+</div>
+<div class="figure">
+<img alt="../../../_images/210.png" src="../../../_images/210.png" />
+</div>
+<p>这时Git就把仓库建好了，而且告诉你是一个空的仓库 <code class="docutils literal"><span class="pre">empty</span> <span class="pre">Git</span> <span class="pre">repository</span></code> ，可以发现当前目录下多了一个 <code class="docutils literal"><span class="pre">.git</span></code> 的文件夹，这个目录是Git来跟踪管理版本库的，没事千万不要手动修改这个目录里面的文件，否则就把Git仓库给破坏了。如果你没有看到 <code class="docutils literal"><span class="pre">.git</span></code> 文件夹，那是因为这个目录默认是隐藏的，用 <code class="docutils literal"><span class="pre">ls</span> <span class="pre">-ah</span></code> 命令就可以看见隐藏的 <code class="docutils literal"><span class="pre">.git</span></code> 文件夹</p>
+<div class="figure">
+<img alt="../../../_images/310.png" src="../../../_images/310.png" />
+</div>
+</div>
+<div class="section" id="id8">
+<h2>提交本地仓库<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>初始化仓库后，我们需要将目录下所有文件进行版本控制，输入 <code class="docutils literal"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">--all</span></code> 将当前目录下所有文件加入到版本控制中；之后可以使用 <code class="docutils literal"><span class="pre">git</span> <span class="pre">status</span></code> 命令查看当前版本控制状态，确认是否将所有文件都添加到版本控制当中</li>
+</ul>
+<div class="figure">
+<img alt="../../../_images/410.png" src="../../../_images/410.png" />
+</div>
+<ul class="simple">
+<li>确认所有文件都添加到版本控制中后，使用 <code class="docutils literal"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-am</span> <span class="pre">&quot;&lt;message&gt;&quot;</span></code> 命令将当前所有版本控制的文件[即上图红框标注的待commit的文件]commit提交到本地git仓库中</li>
+</ul>
+<div class="figure">
+<img alt="../../../_images/53.png" src="../../../_images/53.png" />
+</div>
+<ul class="simple">
+<li>再使用 <code class="docutils literal"><span class="pre">git</span> <span class="pre">status</span></code> 命令查看当前版本控制状态，确认没有待commit的文件，working工作区完整clean</li>
+</ul>
+<div class="figure">
+<img alt="../../../_images/62.png" src="../../../_images/62.png" />
 </div>
 </div>
 </div>

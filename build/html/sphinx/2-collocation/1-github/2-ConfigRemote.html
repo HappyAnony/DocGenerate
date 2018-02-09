@@ -180,6 +180,153 @@
             
   <div class="section" id="id1">
 <h1>配置远程仓库<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>参考文档
+- <a class="reference external" href="https://jingyan.baidu.com/article/948f592414ad67d80ef5f966.html">github多帐号配置SSH key</a></p>
+<div class="section" id="github">
+<h2>注册github账号<a class="headerlink" href="#github" title="Permalink to this headline">¶</a></h2>
+<p>登录 <a class="reference external" href="https://github.com/">github官网</a></p>
+<p>如果你已经有账号，那么点击右上角的 <code class="docutils literal"><span class="pre">sign</span> <span class="pre">in</span></code> 直接登录</p>
+<p>如果没有账号，依次输入昵称、邮箱、密码，然后点击 <code class="docutils literal"><span class="pre">Sign</span> <span class="pre">up</span> <span class="pre">for</span> <span class="pre">GitHub</span></code> 进行注册，按照默认的设置完成注册，最后还要进行邮件确认,我们登录到自己的注册邮箱中，会有一个github发来的邮件，点击即可</p>
+<div class="figure">
+<img alt="../../../_images/72.png" src="../../../_images/72.png" />
+</div>
+</div>
+<div class="section" id="id3">
+<h2>建立远程仓库<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>使用刚刚注册的github账号登录，点击 <code class="docutils literal"><span class="pre">Start</span> <span class="pre">a</span> <span class="pre">project</span></code> ，在 <code class="docutils literal"><span class="pre">Repository</span> <span class="pre">name</span></code> 下输入仓库名，其他的保持默认即可，然后点击 <code class="docutils literal"><span class="pre">Create</span> <span class="pre">repository</span></code> ，到这里，你在github上的的一个仓库就已经建立成功</p>
+<div class="figure">
+<img alt="../../../_images/82.png" src="../../../_images/82.png" />
+</div>
+<div class="figure">
+<img alt="../../../_images/92.png" src="../../../_images/92.png" />
+</div>
+</div>
+<div class="section" id="git">
+<h2>配置git用户名和邮箱<a class="headerlink" href="#git" title="Permalink to this headline">¶</a></h2>
+<p>使用以下命令将申请的github账号用户名、邮箱和git进行绑定</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">user.name</span> <span class="pre">&quot;Your_User_Name&quot;</span></code></li>
+<li><code class="docutils literal"><span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">user.email</span> <span class="pre">&quot;Your_Email&quot;</span></code></li>
+</ul>
+<div class="figure">
+<img alt="../../../_images/102.png" src="../../../_images/102.png" />
+</div>
+<div class="figure">
+<img alt="../../../_images/113.png" src="../../../_images/113.png" />
+</div>
+</div>
+<div class="section" id="ssh-key">
+<h2>配置SSH Key<a class="headerlink" href="#ssh-key" title="Permalink to this headline">¶</a></h2>
+<p>git和github连接的方式有两种</p>
+<ul class="simple">
+<li>http连接：默认情况下，当我们<code class="docutils literal"><span class="pre">git</span> <span class="pre">push</span></code>将本地仓库同步到远程仓库时，git将采用http方式来连接github，但是此时需要输入用户名和密码验证git提交的合法性，这样会很不方便</li>
+<li>ssh连接：使用<code class="docutils literal"><span class="pre">ssh-keygen</span></code>工具生成一对密钥，私钥保存本地，公钥配置到github仓库，<code class="docutils literal"><span class="pre">git</span> <span class="pre">push</span></code>将本地仓库同步到远程仓库时，无需输入用户名和密码，通过私钥公钥验证即可验证合法性</li>
+</ul>
+<p>关于ssh相关命令行工具的使用可参考<a href="#id7"><span class="problematic" id="id8">`ssh详解 &lt;&gt;`_</span></a></p>
+<p>这里我们将选择ssh方式连接github仓库，此时就需要配置<code class="docutils literal"><span class="pre">SSH</span> <span class="pre">Key</span></code>；此处可以参考<a class="reference external" href="https://help.github.com/articles/connecting-to-github-with-ssh/">Github官方文档</a>配置<code class="docutils literal"><span class="pre">SSH</span> <span class="pre">Key</span></code></p>
+<p>配置<code class="docutils literal"><span class="pre">SSH</span> <span class="pre">Key</span></code>的一般思路是</p>
+<ul class="simple">
+<li>使用<code class="docutils literal"><span class="pre">ssh-keygen</span></code>工具生成一对秘钥(公钥和私钥)，默认存放在用户家目录的<code class="docutils literal"><span class="pre">.ssh</span></code>目录下</li>
+<li>将生成的<code class="docutils literal"><span class="pre">.pub</span></code>公钥文件打开，将文件内容添加到github仓库中</li>
+<li>使用<code class="docutils literal"><span class="pre">ssh</span> <span class="pre">-T</span></code>工具验证配置是否生效</li>
+</ul>
+<p>在实际应用中，我们可以将仓库配置类型分类两大类</p>
+<ul class="simple">
+<li>单用户多仓库配置</li>
+<li>多用户单仓库配置</li>
+</ul>
+<p>如果我们一个用户只使用自己的一个github仓库，那就好办，只需要生成一对密钥即可；但是实际应用中，我们要么是维护自己账户的多个仓库，要么是需要多个用户维护同一个仓库，此时就需要管理多对密钥。那么该如何管理呢?</p>
+<ul class="simple">
+<li>生成密钥：<code class="docutils literal"><span class="pre">ssh-keygen</span></code>工具生成密钥是默认是将私钥保存到<code class="docutils literal"><span class="pre">id_rsa</span></code>文件中，将公钥保存到<code class="docutils literal"><span class="pre">id_rsa.pub</span></code>文件中；所以在生成其它github仓库或者其它github用户密钥时，指定其它文件名，不要使用默认值，否则前一个密钥会被后一个密钥覆盖</li>
+<li>密钥添加：将生成的私钥使用<code class="docutils literal"><span class="pre">ssh-agent</span></code>工具添加到<code class="docutils literal"><span class="pre">ssh</span> <span class="pre">agent</span></code>引擎中，因为ssh只能识别使用<code class="docutils literal"><span class="pre">ssh</span> <span class="pre">agent</span></code>引擎中的私钥，默认只添加了文件名为<code class="docutils literal"><span class="pre">id_rsa</span></code>的私钥</li>
+<li>配置config文件：config文件用来配置指定仓库的相关信息，是由多个Host字段组成，以供<code class="docutils literal"><span class="pre">git</span> <span class="pre">push</span></code>将本地仓库同步到远程仓库时遍历使用，config文件Host字段格式如下：</li>
+</ul>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># DocGenerate仓库（15377649725@163.com）配置======注释信息</span>
+<span class="n">Host</span> <span class="n">DocGenerate</span> <span class="o">=================================</span><span class="n">定义Host字段别名</span>
+        <span class="n">HostName</span> <span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">=======================</span><span class="n">指定托管平台域名</span>
+        <span class="n">PreferredAuthentications</span> <span class="n">publickey</span><span class="o">========</span><span class="n">指定仓库认证方式为公钥认证</span>
+        <span class="n">IdentityFile</span> <span class="o">~/.</span><span class="n">ssh</span><span class="o">/</span><span class="n">id_rsa_docgenerate</span><span class="o">====</span><span class="n">指定私钥文件路径</span>
+</pre></div>
+</div>
+<p>ssh秘钥验证逻辑是</p>
+<ol class="arabic simple">
+<li>查找<code class="docutils literal"><span class="pre">.ssh</span></code>目录下是否存在<code class="docutils literal"><span class="pre">config</span></code> 文件，如果存在执行第2步；如果不存在则执行第3步</li>
+<li>从上到下依次遍历读取<code class="docutils literal"><span class="pre">config</span></code>文件内容，找到当前<code class="docutils literal"><span class="pre">git</span> <span class="pre">remote</span></code>命令配置的仓库对应的<code class="docutils literal"><span class="pre">Host字段</span></code>，在该字段中找到对应的私钥文件，判断该私钥文件是否在<code class="docutils literal"><span class="pre">ssh-agent</span></code>中，如果在执行第4步，否则报错</li>
+<li>判断当前目录是否存储<code class="docutils literal"><span class="pre">id_rsa</span></code>文件，如果存在执行第4步，否则报错</li>
+<li>判断当前读取的私钥文件是否和github仓库的公钥匹配上，如果匹配，则验证通过；否则验证失败</li>
+</ol>
+<div class="section" id="id5">
+<h3>单用户多仓库配置<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>使用<code class="docutils literal"><span class="pre">ssh-keygen</span> <span class="pre">-t</span> <span class="pre">rsa</span> <span class="pre">-C</span> <span class="pre">&quot;Github的注册邮箱地址&quot;</span></code>命令生成<code class="docutils literal"><span class="pre">DocGenerate</span></code>仓库对应的密钥对，指定生成路径</li>
+</ul>
+<div class="figure">
+<img alt="../../../_images/122.png" src="../../../_images/122.png" />
+</div>
+<ul class="simple">
+<li>使用<code class="docutils literal"><span class="pre">ssh-keygen</span> <span class="pre">-t</span> <span class="pre">rsa</span> <span class="pre">-C</span> <span class="pre">&quot;Github的注册邮箱地址&quot;</span></code>命令生成<code class="docutils literal"><span class="pre">GnuToolchain</span></code>仓库对应的密钥对，指定生成路径</li>
+</ul>
+<div class="figure">
+<img alt="../../../_images/132.png" src="../../../_images/132.png" />
+</div>
+<ul class="simple">
+<li>使用<code class="docutils literal"><span class="pre">ssh-add</span> <span class="pre">Path_To_Private_Key</span></code>命令将刚生成的各个私钥文件添加到<code class="docutils literal"><span class="pre">ssh</span> <span class="pre">agent</span></code>引擎中</li>
+</ul>
+<div class="figure">
+<img alt="../../../_images/141.png" src="../../../_images/141.png" />
+</div>
+<ul class="simple">
+<li>如果出现<code class="docutils literal"><span class="pre">Could</span> <span class="pre">not</span> <span class="pre">open</span> <span class="pre">a</span> <span class="pre">connection</span> <span class="pre">to</span> <span class="pre">your</span> <span class="pre">authentication</span> <span class="pre">agent</span></code>的错误，就执行<code class="docutils literal"><span class="pre">ssh-agent</span> <span class="pre">bash</span></code>命令；然后再执行上述命令</li>
+</ul>
+<div class="figure">
+<img alt="../../../_images/151.png" src="../../../_images/151.png" />
+</div>
+<ul class="simple">
+<li>在<code class="docutils literal"><span class="pre">~/.ssh</span></code>目录下找到config文件，如果没有就使用<code class="docutils literal"><span class="pre">touch</span> <span class="pre">config</span></code>命令创建该文件，编辑如下</li>
+</ul>
+<div class="figure">
+<img alt="../../../_images/161.png" src="../../../_images/161.png" />
+</div>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>进入<code class="docutils literal"><span class="pre">.ssh</span></code>文件夹，使用文本编辑器(sublime/notepad++)打开<code class="docutils literal"><span class="pre">id_rsa_docgenerate.pub</span></code>文件和<code class="docutils literal"><span class="pre">id_rsa_GnuToolchain.pub</span></code>文件，复制全部内容（即生成的公钥）</dt>
+<dd><ul class="first last">
+<li>千万不要使用Windows自带的记事本编辑任何文本文件。原因是Microsoft开发记事本的团队使用了一个非常弱智的行为来保存<code class="docutils literal"><span class="pre">UTF-8</span></code>编码的文件，他们自作聪明地在每个文件开头添加了<code class="docutils literal"><span class="pre">0xefbbbf</span></code>（十六进制）的字符</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<div class="figure">
+<img alt="../../../_images/171.png" src="../../../_images/171.png" />
+</div>
+<div class="figure">
+<img alt="../../../_images/181.png" src="../../../_images/181.png" />
+</div>
+<ul class="simple">
+<li>登录github账号，然后在页面右下角的<code class="docutils literal"><span class="pre">Your</span> <span class="pre">repositories</span></code>目录下，打开创建的仓库，点击右上角的<code class="docutils literal"><span class="pre">settings</span></code>，左边选中<code class="docutils literal"><span class="pre">Deploy</span> <span class="pre">keys</span></code>，右边点击<code class="docutils literal"><span class="pre">Add</span> <span class="pre">deploy</span> <span class="pre">key</span></code>，<code class="docutils literal"><span class="pre">Title</span></code>可随便填写，<code class="docutils literal"><span class="pre">Key</span></code>粘贴上面复制的key（即.pub文件的全部内容），然后点击<code class="docutils literal"><span class="pre">Add</span> <span class="pre">key</span></code></li>
+</ul>
+<div class="figure">
+<img alt="../../../_images/191.png" src="../../../_images/191.png" />
+</div>
+<div class="figure">
+<img alt="../../../_images/201.png" src="../../../_images/201.png" />
+</div>
+<ul class="simple">
+<li>之后注册邮箱会收到一封github官网发来的验证邮件，打开邮件链接进行确认即可</li>
+<li>使用<code class="docutils literal"><span class="pre">ssh</span> <span class="pre">-T</span> <span class="pre">git&#64;DocGenerate</span></code>命令和<code class="docutils literal"><span class="pre">ssh</span> <span class="pre">-T</span> <span class="pre">git&#64;GnuToolchain</span></code>命令验证配置是否成功</li>
+</ul>
+<div class="figure">
+<img alt="../../../_images/212.png" src="../../../_images/212.png" />
+</div>
+<ul class="simple">
+<li>如果是第一次，会提示是否<code class="docutils literal"><span class="pre">continue</span></code>，输入yes就会看到：<code class="docutils literal"><span class="pre">You’ve</span> <span class="pre">successfully</span> <span class="pre">username,</span> <span class="pre">but</span> <span class="pre">GitHub</span> <span class="pre">does</span> <span class="pre">not</span> <span class="pre">provide</span> <span class="pre">shell</span> <span class="pre">access</span></code> （username会显示为你的账号名称）这就表示已成功连上github</li>
+</ul>
+</div>
+<div class="section" id="id6">
+<h3>多用户单仓库配置<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
 </div>
 
 
