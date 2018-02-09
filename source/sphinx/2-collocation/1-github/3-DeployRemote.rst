@@ -14,6 +14,7 @@
 
 - 如果\ ``git remote  -v``\ 命令结果为空，则使用\ ``git remote add origin <url>``\ 命令将刚才复制的\ ``remote ssh url``\ 新添加到git中
 	- \ ``origin``\ 为remote远程仓库的默认名称
+	- 注意将url中的\ ``github.com``\ 替换成config文件中Host别名\ `DocGenerate``\ 或\ ``GnuToolchain``\ 
 
 .. figure:: ../images/1-github/24.png
 
@@ -27,6 +28,12 @@
 .. figure:: ../images/1-github/26.png
 
 - 此时可能会报错误\ ``fatal: Could not read from remote repository.``\ ，出现错误的主要原因是github中的\ ``README.md``\ 文件不在本地代码目录中，可使用\ ``git pull --rebase origin master``\ 命令解决
+	- 此时需要确保当前working暂存区的所有文件都已经commit提交到本地仓库中
+
+.. figure:: ../images/1-github/27.png
+
+- 然后使用\ ``git push -u origin master``\ 命令再次将本地仓库push同步到刚才配置的remote远程仓库中，此时就会push成功
+
 
 
 

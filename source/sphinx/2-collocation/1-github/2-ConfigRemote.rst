@@ -64,7 +64,7 @@ git和github连接的方式有两种
 ::
 
 	# DocGenerate仓库（15377649725@163.com）配置======注释信息
-	Host DocGenerate =================================定义Host字段别名
+	Host DocGenerate =================================定义Host字段别名，在配置remote url时用来替换github.com
 	        HostName github.com=======================指定托管平台域名
 	        PreferredAuthentications publickey========指定仓库认证方式为公钥认证
 	        IdentityFile ~/.ssh/id_rsa_docgenerate====指定私钥文件路径
