@@ -50,7 +50,11 @@ window下命令行工具也有很多，比较推荐的是
 
 .. figure:: ../images/1-github/5.png
 
-- 再使用 ``git status`` 命令查看当前版本控制状态
+- 再使用 ``git status`` 命令查看当前版本控制状态，确认没有待commit的文件，working工作区完整clean
+
+.. figure:: ../images/1-github/6.png
+
+
 
 
 
