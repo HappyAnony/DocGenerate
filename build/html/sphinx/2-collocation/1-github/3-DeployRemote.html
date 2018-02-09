@@ -180,6 +180,74 @@
             
   <div class="section" id="id1">
 <h1>远程仓库部署<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>参考文档</p>
+<ul class="simple">
+<li><a class="reference external" href="https://www.jianshu.com/p/835e0a48c825">如何解决failed to push some refs to git</a></li>
+<li><a class="reference external" href="http://blog.csdn.net/huahua78/article/details/52330792">fatal Could not read from remote repository的解决办法</a></li>
+</ul>
+<div class="section" id="remote-url">
+<h2>配置remote url<a class="headerlink" href="#remote-url" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>可使用<code class="docutils literal"><span class="pre">git</span> <span class="pre">remote</span>&#160; <span class="pre">-v</span></code>命令查看当前配置的remote仓库</li>
+<li>点击github仓库页面的<code class="docutils literal"><span class="pre">clone</span> <span class="pre">and</span> <span class="pre">download</span></code>;然后点击<code class="docutils literal"><span class="pre">Use</span> <span class="pre">SSH</span></code>，找到ssh的clone地址，复制该地址</li>
+</ul>
+<div class="figure">
+<img alt="../../../_images/231.png" src="../../../_images/231.png" />
+</div>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>如果<code class="docutils literal"><span class="pre">git</span> <span class="pre">remote</span>&#160; <span class="pre">-v</span></code>命令结果为空，则使用<code class="docutils literal"><span class="pre">git</span> <span class="pre">remote</span> <span class="pre">add</span> <span class="pre">origin</span> <span class="pre">&lt;url&gt;</span></code>命令将刚才复制的<code class="docutils literal"><span class="pre">remote</span> <span class="pre">ssh</span> <span class="pre">url</span></code>新添加到git中</dt>
+<dd><ul class="first last">
+<li><code class="docutils literal"><span class="pre">origin</span></code>为remote远程仓库的默认名称</li>
+<li>注意url中的<code class="docutils literal"><span class="pre">github.com</span></code>需替换成config文件中Host别名<code class="docutils literal"><span class="pre">DocGenerate</span></code>或<code class="docutils literal"><span class="pre">GnuToolchain</span></code></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<div class="figure">
+<img alt="../../../_images/241.png" src="../../../_images/241.png" />
+</div>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>如果<code class="docutils literal"><span class="pre">git</span> <span class="pre">remote</span>&#160; <span class="pre">-v</span></code>命令结果不为空，则使用<code class="docutils literal"><span class="pre">git</span> <span class="pre">remote</span> <span class="pre">set-url</span> <span class="pre">origin</span> <span class="pre">&lt;url&gt;</span></code>命令将<code class="docutils literal"><span class="pre">remote</span> <span class="pre">url</span></code>重置成刚才复制的<code class="docutils literal"><span class="pre">remote</span> <span class="pre">ssh</span> <span class="pre">url</span></code></dt>
+<dd><ul class="first last">
+<li>注意url中的<code class="docutils literal"><span class="pre">github.com</span></code>需替换成config文件中Host别名<code class="docutils literal"><span class="pre">DocGenerate</span></code>或<code class="docutils literal"><span class="pre">GnuToolchain</span></code></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<div class="figure">
+<img alt="../../../_images/251.png" src="../../../_images/251.png" />
+</div>
+<ul class="simple">
+<li>使用<code class="docutils literal"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">-u</span> <span class="pre">origin</span> <span class="pre">master</span></code>命令将本地仓库push同步到刚才配置的remote远程仓库中</li>
+</ul>
+<div class="figure">
+<img alt="../../../_images/261.png" src="../../../_images/261.png" />
+</div>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>此时可能会报错误<code class="docutils literal"><span class="pre">fatal:</span> <span class="pre">Could</span> <span class="pre">not</span> <span class="pre">read</span> <span class="pre">from</span> <span class="pre">remote</span> <span class="pre">repository.</span></code>，出现错误的主要原因是github中的<code class="docutils literal"><span class="pre">README.md</span></code>文件不在本地代码目录中，可使用<code class="docutils literal"><span class="pre">git</span> <span class="pre">pull</span> <span class="pre">--rebase</span> <span class="pre">origin</span> <span class="pre">master</span></code>命令解决</dt>
+<dd><ul class="first last">
+<li>此时需要确保当前working暂存区的所有文件都已经commit提交到本地仓库中</li>
+<li>该项也提醒我们以后凡是<code class="docutils literal"><span class="pre">git</span> <span class="pre">push</span></code>之前最后先使用<code class="docutils literal"><span class="pre">git</span> <span class="pre">pull</span></code>将remote远程仓库内容拉到本地和本地仓库合并，然后再push到远程仓库，避免push时出现错误</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<div class="figure">
+<img alt="../../../_images/271.png" src="../../../_images/271.png" />
+</div>
+<ul class="simple">
+<li>然后使用<code class="docutils literal"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">-u</span> <span class="pre">origin</span> <span class="pre">master</span></code>命令再次将本地仓库push同步到刚才配置的remote远程仓库中，此时就会push成功</li>
+</ul>
+<div class="figure">
+<img alt="../../../_images/281.png" src="../../../_images/281.png" />
+</div>
+</div>
 </div>
 
 

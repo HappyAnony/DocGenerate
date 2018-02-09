@@ -241,17 +241,17 @@
 <li>密钥添加：将生成的私钥使用<code class="docutils literal"><span class="pre">ssh-agent</span></code>工具添加到<code class="docutils literal"><span class="pre">ssh</span> <span class="pre">agent</span></code>引擎中，因为ssh只能识别使用<code class="docutils literal"><span class="pre">ssh</span> <span class="pre">agent</span></code>引擎中的私钥，默认只添加了文件名为<code class="docutils literal"><span class="pre">id_rsa</span></code>的私钥</li>
 <li>配置config文件：config文件用来配置指定仓库的相关信息，是由多个Host字段组成，以供<code class="docutils literal"><span class="pre">git</span> <span class="pre">push</span></code>将本地仓库同步到远程仓库时遍历使用，config文件Host字段格式如下：</li>
 </ul>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># DocGenerate仓库（15377649725@163.com）配置======注释信息</span>
-<span class="n">Host</span> <span class="n">DocGenerate</span> <span class="o">=================================</span><span class="n">定义Host字段别名</span>
-        <span class="n">HostName</span> <span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">=======================</span><span class="n">指定托管平台域名</span>
-        <span class="n">PreferredAuthentications</span> <span class="n">publickey</span><span class="o">========</span><span class="n">指定仓库认证方式为公钥认证</span>
-        <span class="n">IdentityFile</span> <span class="o">~/.</span><span class="n">ssh</span><span class="o">/</span><span class="n">id_rsa_docgenerate</span><span class="o">====</span><span class="n">指定私钥文件路径</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span># DocGenerate仓库（15377649725@163.com）配置======注释信息
+Host DocGenerate =================================定义Host字段别名，在配置remote url时用来替换github.com
+        HostName github.com=======================指定托管平台域名
+        PreferredAuthentications publickey========指定仓库认证方式为公钥认证
+        IdentityFile ~/.ssh/id_rsa_docgenerate====指定私钥文件路径
 </pre></div>
 </div>
 <p>ssh秘钥验证逻辑是</p>
 <ol class="arabic simple">
 <li>查找<code class="docutils literal"><span class="pre">.ssh</span></code>目录下是否存在<code class="docutils literal"><span class="pre">config</span></code> 文件，如果存在执行第2步；如果不存在则执行第3步</li>
-<li>从上到下依次遍历读取<code class="docutils literal"><span class="pre">config</span></code>文件内容，找到当前<code class="docutils literal"><span class="pre">git</span> <span class="pre">remote</span></code>命令配置的仓库对应的<code class="docutils literal"><span class="pre">Host字段</span></code>，在该字段中找到对应的私钥文件，判断该私钥文件是否在<code class="docutils literal"><span class="pre">ssh-agent</span></code>中，如果在执行第4步，否则报错</li>
+<li>从上到下依次遍历读取<code class="docutils literal"><span class="pre">config</span></code>文件内容，找到当前<code class="docutils literal"><span class="pre">git</span> <span class="pre">remote</span> <span class="pre">-v</span></code>命令配置的仓库对应的<code class="docutils literal"><span class="pre">Host字段</span></code>，在该字段中找到对应的私钥文件，判断该私钥文件是否在<code class="docutils literal"><span class="pre">ssh-agent</span></code>中，如果在执行第4步，否则报错</li>
 <li>判断当前目录是否存储<code class="docutils literal"><span class="pre">id_rsa</span></code>文件，如果存在执行第4步，否则报错</li>
 <li>判断当前读取的私钥文件是否和github仓库的公钥匹配上，如果匹配，则验证通过；否则验证失败</li>
 </ol>

@@ -64,7 +64,7 @@ git和github连接的方式有两种
 ::
 
 	# DocGenerate仓库（15377649725@163.com）配置======注释信息
-	Host DocGenerate =================================定义Host字段别名
+	Host DocGenerate =================================定义Host字段别名，在配置remote url时用来替换github.com
 	        HostName github.com=======================指定托管平台域名
 	        PreferredAuthentications publickey========指定仓库认证方式为公钥认证
 	        IdentityFile ~/.ssh/id_rsa_docgenerate====指定私钥文件路径
@@ -73,7 +73,7 @@ git和github连接的方式有两种
 ssh秘钥验证逻辑是
 
 1. 查找\ ``.ssh``\ 目录下是否存在\ ``config`` 文件，如果存在执行第2步；如果不存在则执行第3步
-2. 从上到下依次遍历读取\ ``config``\ 文件内容，找到当前\ ``git remote``\ 命令配置的仓库对应的\ ``Host字段``\ ，在该字段中找到对应的私钥文件，判断该私钥文件是否在\ ``ssh-agent``\ 中，如果在执行第4步，否则报错
+2. 从上到下依次遍历读取\ ``config``\ 文件内容，找到当前\ ``git remote -v``\ 命令配置的仓库对应的\ ``Host字段``\ ，在该字段中找到对应的私钥文件，判断该私钥文件是否在\ ``ssh-agent``\ 中，如果在执行第4步，否则报错
 3. 判断当前目录是否存储\ ``id_rsa``\ 文件，如果存在执行第4步，否则报错
 4. 判断当前读取的私钥文件是否和github仓库的公钥匹配上，如果匹配，则验证通过；否则验证失败
 
